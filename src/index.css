@@ -1,3 +1,60 @@
 @import "tailwindcss";
 
+/* Setup library CSS Variables */
+:root {
+  --swiper-navigation-size: 30px !important;
+  --swiper-navigation-color: var(--color-secondary);
+  --swiper-pagination-color: var(--color-primary);
+}
+
+.swiper:not(.swiper-initialized) {
+  visibility: hidden !important;
+}
+
+/* extra space for iphone users */
+@supports (-webkit-touch-callout: none) {
+  .mobile-footer {
+    padding-bottom: 8px;
+  }
+}
+
+/* Target only number inputs */
+/* remove up & down buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* Custom styles for your kiosk app */
+@layer base {
+  .marquee-swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
+  /* don't remove */
+  /* it fixes input background color related bug on chrome devices */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: textfield !important;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000000s ease-in-out 0s;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+  }
+  /* fixing tw4 default behaviour */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+     scrollbar-gutter: stable;
+  }
+}
