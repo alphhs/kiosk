@@ -1,4 +1,58 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+};
+@plugin "@tailwindcss/typography";
+
+/* Import custom theme after DaisyUI */
+@import "./design/theme.css";
+
+/* Tailwind Container Configuration */
+@layer utilities {
+  .container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+}
+
+/* DaisyUI Component Overrides */
+@layer components {
+  .label {
+    color: var(--color-base-content);
+    justify-content: space-between;
+    padding: 0.5rem 0.25rem;
+    font-size: var(--text-lg);
+    display: flex;
+  }
+  
+  .label-text {
+    font-size: inherit;
+  }
+  
+  .collapse > input:is([type="checkbox"], [type="radio"]) {
+    min-height: 0;
+    padding: 0;
+  }
+  
+  .join {
+    border-radius: var(--radius-field);
+  }
+  
+  .input {
+    height: 48px;
+    font-size: 1rem;
+  }
+  
+  .input:focus, 
+  .input:focus-within {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+  
+  .badge {
+    padding-inline: calc(0.25rem * 2 - var(--border));
+  }
+}
 
 /* Setup library CSS Variables */
 :root {
@@ -47,6 +101,7 @@ input[type="number"]::-webkit-outer-spin-button {
     transition: background-color 5000000s ease-in-out 0s;
   }
   input[type="number"] {
+    appearance: textfield; /* Standard property */
     -moz-appearance: textfield; /* For Firefox */
   }
   /* fixing tw4 default behaviour */

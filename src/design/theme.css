@@ -1,0 +1,127 @@
+/* DaisyUI Theme Configuration for Tailwind CSS v4 */
+@layer base {
+  :root {
+    /* DaisyUI Color Variables */
+    --color-base-100: #fff;
+    --color-base-200: #fafafa;
+    --color-base-300: #f5f5f5;
+    --color-base-content: #171717;
+    --color-primary: #000000;
+    --color-primary-content: #fff;
+    --color-secondary: #242424;
+    --color-secondary-content: #FFFFFF;
+    --color-accent: #00B4D8;
+    --color-accent-content: #FF4D4D;
+    --color-neutral: #525252;
+    --color-neutral-content: #a3a3a3;
+    --color-info: #38BDF8;
+    --color-info-content: #ffffff;
+    --color-success: #84cc16;
+    --color-success-content: #ffffff;
+    --color-warning: #facc15;
+    --color-warning-content: #fefce8;
+    --color-error: #dc2626;
+    --color-error-content: #fef2f2;
+
+    /* DaisyUI Border Radius */
+    --rounded-btn: 4px;
+    --rounded-box: 4px;
+
+    /* Custom border radius */
+    --radius-selector: 1rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+
+    /* Custom sizes */
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+
+    /* Border size */
+    --border: 1px;
+
+    /* Effects */
+    --depth: 0;
+    --noise: 0;
+  }
+}
+
+/* Tailwind Theme Variables */
+@theme {
+  /* Custom container */
+  /*--breakpoint-xs: 20rem;*/
+
+  /* Custom animation */
+  --animate-grow: grow 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  --animate-appear: appear 0s ease forwards;
+
+  /* used for shiny animation on badge images */
+  --animate-shiny: shiny 2s infinite;
+
+  /* used on on buy cart drawer */
+  --animate-flash: flash 4s ease-in-out forwards;
+
+  @keyframes grow {
+    0% {
+      transform: scale(0);
+    }
+
+    80% {
+      transform: scale(1.3);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shiny {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%) skewX(25deg);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateX(100%) skewX(25deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(100%) skewX(25deg);
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      background-color: rgba(255, 223, 186, 0.5);
+    }
+
+    100% {
+      background-color: transparent;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-base-content/20;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

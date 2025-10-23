@@ -14,7 +14,6 @@ function HomeComponent() {
         <p className="text-xl text-gray-600 mb-8">
           Your interactive self-service station
         </p>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
