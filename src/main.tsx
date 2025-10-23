@@ -2,6 +2,8 @@ import { createRouter, RouterProvider } from '@tanstack/react-router'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import { LocaleProvider } from './lib/contexts/LocaleContext'
+import TranslationProvider from './lib/contexts/TranslationProvider'
 import { routeTree } from './routeTree.gen'
 
 const router = createRouter({ routeTree })
@@ -14,6 +16,10 @@ declare module '@tanstack/react-router' {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <LocaleProvider>
+      <TranslationProvider>
+        <RouterProvider router={router} />
+      </TranslationProvider>
+    </LocaleProvider>
   </StrictMode>,
 )
