@@ -1,10 +1,12 @@
-import { DEFAULT_LOCALE } from '@/lib/i18n-constants'
+import { getStoredLocale } from '@/lib/contexts/LocaleContext'
 import { createFileRoute, redirect } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   beforeLoad: () => {
+    const savedLocale = getStoredLocale()
     throw redirect({
-      to: `/${DEFAULT_LOCALE}/`,
+      to: '/$locale',
+      params: { locale: savedLocale },
     })
   },
 })

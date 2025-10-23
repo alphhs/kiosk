@@ -40,7 +40,7 @@ function detectBrowserLocale(): SupportedLocale {
   return DEFAULT_LOCALE
 }
 
-function getStoredLocale(): SupportedLocale {
+export function getStoredLocale(): SupportedLocale {
   const cookieLocale = Cookies.get(LOCALE_KEY) as SupportedLocale | undefined
   
   if (cookieLocale && SUPPORTED_LOCALES.includes(cookieLocale)) {
