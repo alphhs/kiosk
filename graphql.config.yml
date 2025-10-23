@@ -1,0 +1,18 @@
+schema: schema.graphql
+extensions:
+  endpoints:
+    local:
+      url: http://127.0.0.1:3003/graphql
+      headers:
+        Authorization: Bearer 1amlbBoP5jv3xlnmGLqLBui81fsY7mEv46QvANj9ixM
+      introspect: false
+    staging:
+      url: https://api-test.cody.mn/graphql
+      headers:
+        Authorization: Bearer eyJraWQiOiJuZXh0IiwiYXBwIjo0LCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJDT0RZIiwiaWF0IjoxNzI3OTM2MzY4LCJleHAiOjE3NTk0OTMzMjAsIndpZCI6MywiaWR4IjoibmV4dCIsImp0aSI6IjljNjg0NGQ3LTViNzYtNDcwMi1iZjhhLTUzNGEwNzI5YjhjNyIsInNjb3BlcyI6InB1YmxpYyJ9.r9ry26GbUoeduSnd7QY-nnh0eohayBfpI7fE-ch9f6ADZOlS2EpjN8fWEMh81JluTDG2cCWv8tlTBWt0O9PFPLyzZUFtJ9fNNar6uM7WhHSBRIMQk4EKljFyt1p2cS7gA3056WdJaWIPcqdtzsiaGskZxwpo67T5XGYoAZvkR6RnVBixEQUmI1hskpQZAf8s7ddnb3XavC1gHX3mKfICMR8ANGyx8lwaGtaANT2whVx7Wzj2oBcZXpRWbxfiKvDcByyKD25ejslq_8oGJCOZ9Juu56Li-2w6ShXRzvHoEaSAFzNsIPjbZgsF-URGGZJb7FcCDkmy_pLkSl5l8b5NiA
+      introspect: false
+    prod:
+      url: https://api.cody.mn/graphql
+      headers:
+        Authorization: Bearer eyJraWQiOiJuZXh0IiwiYXBwIjo0LCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJDT0RZIiwiaWF0IjoxNzMzMzc5MTc0LCJleHAiOjE3MzMzODYzNzQsIndpZCI6MywiaWR4IjoibmV4dCIsImp0aSI6ImIwOTkxODExLWFkMGUtNDY4Yi1iMjI2LTkxZjRmMDA3MTFlOSIsInNjb3BlcyI6InB1YmxpYyIsInVzZXIiOnsiaWQiOjczOTcsImVtYWlsIjoidGhpc2l6bW9uc3RlckBnbWFpbC5jb20iLCJtb2JpbGUiOiI4MDMwNjAxMCIsInJvbGVzIjpbInVzZXIiLCJlZGl0b3IiLCJtYW5hZ2VyIiwibW9kZXJhdG9yIiwibG90dGVyeSIsImV2ZW50IiwiYWRtaW4iXX19.bcrYQzp5cFHao1YzpEiuh-OVCviUr-VYV3TeMz89PnK-Y6CQipScfYuRRsCXThrp_tv-n6zA82umehXgCrPJqiPe5Qbl93PA80w-c2KQNWYkixxcphbfn46bMZ3bu6UGz2TuSOw24T7tQl1d6d3idaNXEsXyylTqRDDCPi0L2OwI-ICUYxpt0mKmHzvxo92w0th85crYofvjkE_9KcGZc1Ux23axhXdv2akyubUWPnh6OGqPKTsnonI-OdTjK1-nTV_ZgRRYxuvwtUMcbgA7VQSLHXkbdFB6u3V0dRH0IKSZCt_5Ebn2mepaVVg9FeAHJr2jpA5n3YKFoEWXFexjTA
+      introspect: false
