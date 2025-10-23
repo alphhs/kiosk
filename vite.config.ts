@@ -4,6 +4,7 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
   plugins: [
@@ -13,6 +14,10 @@ export default defineConfig({
       target: 'react',
       autoCodeSplitting: true,
     }),
+     svgr({
+      include: '**/*.svg',
+      exclude: '**/*.svg?url',
+    }),
     lingui(),
     react({
       babel: {
@@ -20,6 +25,14 @@ export default defineConfig({
       },
     }),
   ],
+  define: {
+    'process.env.PLATFORM': JSON.stringify(process.env.PLATFORM || 'kolon'),
+    'process.env.STAGE': JSON.stringify(process.env.STAGE || 'dev'),
+  },
+   build: {
+    outDir: `dist/${process.env.PLATFORM || 'kolon'}.${process.env.STAGE || 'dev'}`,
+    sourcemap: true,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "PLATFORM=kolon STAGE=dev vite",
+    "dev:prod": "PLATFORM=kolon STAGE=prod vite",
+    "build": "tsc && vite build",
+    "build:kolon:prod": "PLATFORM=kolon STAGE=prod tsc && vite build",
+    "preview": "PLATFORM=kolon vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "preview": "vite preview",
     "lingui:extract": "lingui extract"
   },
   "dependencies": {
@@ -21,10 +23,14 @@
     "@tailwindcss/vite": "^4.1.15",
     "@tanstack/react-router": "^1.133.22",
     "@tanstack/react-router-devtools": "^1.133.22",
+    "@types/lodash": "^4.17.20",
     "daisyui": "^5.3.8",
+    "dayjs": "^1.11.18",
     "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-idle-timer": "^5.7.2",
     "tailwindcss": "^4.1.15"
   },
   "devDependencies": {
@@ -47,6 +53,7 @@
     "prettier-plugin-tailwindcss": "^0.7.1",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vite-plugin-svgr": "^4.5.0"
   }
 }
