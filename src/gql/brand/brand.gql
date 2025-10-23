@@ -1,0 +1,29 @@
+query brand($code: String!){
+  brand(code: $code) {
+    id
+    code
+    name
+    cover
+    logo
+    officialLogo
+    whiteLogo {
+      id
+      alt
+      link
+    }
+    blackLogo {
+      id
+      alt
+      link
+    }
+    averageRating
+    totalReviews
+    follow {
+      id
+      followersCount
+      following
+    }
+    metaKeywords
+    metaDescription
+  }
+}

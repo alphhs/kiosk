@@ -1,0 +1,19 @@
+query cards($qpay: Boolean!, $golomt: Boolean!) {
+  me{
+    id
+    qPayCards @include(if: $qpay) {
+      id
+      bank: cardIssuer
+      cardNumber
+      cardType
+      createdAt
+    }
+    golomtCards @include(if: $golomt){
+      id
+      cardNumber
+      cardHolder
+      bank
+      createdAt
+    }
+  }
+}

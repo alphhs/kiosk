@@ -1,0 +1,39 @@
+query wishedProducts {
+    wishlists(first: 1) {
+        nodes {
+            id
+            wishedProducts {
+                id
+                variant {
+                    id
+                    product {
+                        id
+                        sku
+                        title
+                        slug
+                        name
+                        image
+                        productCat
+                        sellingPrice
+                        price
+                        saleExpireAt
+                        createdAt
+                        currency
+                        averageRating
+                        images {
+                            url
+                        }
+                        brand {
+                            id
+                            name
+                            logo
+                        }
+                        vendor {
+                            id
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

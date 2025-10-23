@@ -1,0 +1,214 @@
+fragment currentOrder on Order {
+  id
+  number
+  token
+  currency
+  email
+  state
+  digital
+  usableStoreCredit
+  totalAppliedStoreCredit
+  giftOrigin
+  shipAddress {
+    id
+    alias
+    stateName
+    districtName
+    quarterName
+    firstname
+    lastname
+    phone
+    address1
+    cdq
+    stateId
+    districtId
+    address2
+  }
+  billAddress {
+    id
+    phone
+    cdq
+    firstname
+    lastname
+    address1
+    isCompany
+    passportNumber
+  }
+  lineItems {
+    id
+    quantity
+    currency
+    giftQuantity
+    giftOrigin
+    amount
+    data
+    listing {
+      id
+      relatedProducts {
+        id
+        discountAmount
+        startAt
+        expireAt
+        relationType {
+          id
+          name
+        }
+        relatedTo {
+          ... on Product {
+            id
+            slug
+            sku
+          }
+        }
+      }
+      promotions {
+        id
+        name
+        code
+        description
+        expiresAt
+        rule
+        terms
+        usageLimit
+        actionManifests {
+          id
+          rule
+          action
+          limit
+          variants {
+            id
+            sku
+          }
+        }
+      }
+    }
+    variant {
+      id
+      sku
+      price
+    }
+    product {
+      id
+      productCat
+      createdAt
+        productProperties {
+          id
+          position
+          value
+          property {
+            id
+            name
+            presentation
+            createdAt
+          }
+        }
+    }
+    manifest {
+      id
+      name
+      sku
+      price
+      image
+      slug
+      canSupply
+      optionsText
+      totalOnHand
+      brand {
+        id
+        name
+      }
+      vendor {
+        id
+        name
+      }
+      ... on GiftCardManifest {
+        giftCards {
+          id
+          sendEmailAt
+          giftMessage
+          recipientEmail
+          recipientName
+          purchaserName
+        }
+      }
+    }
+    total
+    price
+    adjustmentTotal
+    taxableAdjustmentTotal
+  }
+  shipments {
+    id
+    state
+    shippedAt
+    weight
+    adjustmentTotal
+    selectedShippingRate {
+      id
+      cost
+      shippingMethod {
+        id
+        name
+      }
+    }
+    shipper {
+      id
+      name
+      logo
+      phoneNumber
+      email
+      description
+    }
+    lineItemManifest {
+      id
+      quantity
+      total
+      states
+      lineItem {
+        id
+        data
+        price
+        manifest {
+          id
+          name
+          image
+          slug
+          optionsText
+          brand {
+            id
+            name
+            code
+          }
+        }
+      }
+    }
+  }
+  itemCount
+  itemTotal
+  taxableAdjustmentTotal
+  taxTotal
+  total
+  shipmentTotal
+  totalAfterStoreCredit
+  adjustmentTotal
+  promotionActionPromises {
+    nodes {
+      id
+      promotionActionLineItems {
+        id
+        lineItemId
+        variant {
+          id
+          name
+        }
+      }
+    }
+  }
+  allAdjustments {
+    id
+    label
+    amount
+    included
+  }
+  preorderDownPayment
+}

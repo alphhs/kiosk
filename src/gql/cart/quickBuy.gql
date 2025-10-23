@@ -1,0 +1,7 @@
+mutation quickBuy($input: quickBuyInput!) {
+  quickBuy(input: $input) {
+    id
+    number
+    outstandingBalance
+  }
+}

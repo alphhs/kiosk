@@ -1,0 +1,34 @@
+query taxonThreeNodes($filter: TaxonFilter, $first: Int) {
+  taxons (filter: $filter, first: $first, sort: {field: "position", direction: asc}) {
+    nodes {
+      id
+      name
+      permalink
+      position
+      hasChildren
+      data
+      listingsCount
+      isDisabled
+      bannerLink
+      children {
+        id
+        name
+        permalink
+        position
+        hasChildren
+        data
+        listingsCount
+        isDisabled
+        children {
+          id
+          name
+          permalink
+          position
+          listingsCount
+          isDisabled
+          data
+        }
+      }
+    }
+  }
+}

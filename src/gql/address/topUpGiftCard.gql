@@ -1,0 +1,14 @@
+mutation topUpGiftCard($code: String!) {
+  topUpGiftCard(input: {code: $code}) {
+    id
+    amount
+    redeemer {
+      id
+      wallet
+      currentOrder{
+        id
+        usableStoreCredit
+      }
+    }
+  }
+}

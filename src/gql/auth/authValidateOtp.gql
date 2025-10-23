@@ -1,0 +1,3 @@
+mutation authValidateOtp($login: String!, $token: String!) {
+  valid: authValidateOtp(input: { login: $login, token: $token })
+}

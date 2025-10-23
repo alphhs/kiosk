@@ -1,0 +1,20 @@
+query productWithBooking($slug: String!, $date: ISO8601DateTime!) {
+  listing(slug: $slug, impression: true) {
+    id
+    slug
+    product {
+      id
+      name
+      sku
+      slug
+      productCat
+      booking {
+        prices
+        id
+        repeats
+        skips
+        stocks(date: $date)
+      }
+    }
+  }
+}

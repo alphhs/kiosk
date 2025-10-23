@@ -1,0 +1,5 @@
+mutation emptyCart($number: String!, $token: String!){
+  emptyCart(input: {number: $number, token: $token}){
+    ...currentOrder
+  }
+}

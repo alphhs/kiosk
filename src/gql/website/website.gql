@@ -1,0 +1,27 @@
+query website {
+  website{
+    id
+    name
+    currency
+    language
+    languages
+    leasing
+    domain
+    alternateDomain
+    email
+    index
+    cancelHour
+    onesignalAppId
+    facebookAppId
+    facebookChatId
+    wallet
+    paymentAccountData
+    features {
+      id
+      feature
+    }
+    logo
+    white
+    black
+  }
+}

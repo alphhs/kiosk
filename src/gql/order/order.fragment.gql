@@ -1,0 +1,118 @@
+fragment order on Order {
+    id
+    number
+    total
+    state
+    currency
+    shipmentTotal
+    adjustmentTotal
+    canceledAt
+    completedAt
+    paidAt
+    createdAt
+    paymentState
+    shipmentState
+    totalAppliedStoreCredit
+    totalAfterStoreCredit
+    outstandingBalance
+    waitUntil
+    itemTotal
+    posData
+    leaseState
+    taxTotal
+    qPayInvoice {
+      id
+      invoiceId
+      deepLinks {
+        name
+        link
+        logo
+        description
+      }
+      qrCode
+      qrImage
+      qrUrl
+      status
+    }
+    payments {
+      id
+      source {
+        ...on DigiPayInvoice {
+          redirectUrl
+        }
+      }
+    }
+
+    allAdjustments {
+      id
+      label
+      amount
+    }
+    shipments {
+      id
+      state
+      shippedAt
+      selectedShippingRate {
+        id
+        cost
+        shippingMethod {
+          id
+          name
+        }
+      }
+      shipper {
+        id
+        name
+        logo
+        phoneNumber
+        email
+        description
+      }
+      lineItemManifest {
+        id
+        quantity
+        total
+        states
+        lineItem {
+          id
+          data
+          price
+          manifest {
+            id
+            sku
+            name
+            image
+            slug
+            optionsText
+            brand {
+              id
+              name
+              code
+            }
+          }
+        }
+      }
+    }
+    email
+    digital
+    billAddress {
+      id
+      firstname
+      lastname
+      phone
+      isCompany
+      company 
+    }
+    shipAddress {
+      id
+      stateName
+      districtName
+      address1
+      house
+      apartment
+      floor
+      entrance
+      intercom
+      phone
+    }
+}

@@ -1,0 +1,48 @@
+mutation verifyLogin($login: String!, $token: String!) {
+  verifyLogin(input: { login: $login, token: $token }) {
+    id
+    confirmedAt
+    mobile
+    mobileConfirmedAt
+    email
+    firstName
+    lastName
+    billAddress {
+      id
+      firstname
+      lastname
+      address1
+      isCompany
+      district {
+        id
+      }
+      quarter {
+        id
+      }
+      state {
+        id
+      }
+    }
+    userAddresses(first: 3) {
+      nodes {
+        id
+        address {
+          firstname
+          lastname
+          address1
+          isCompany
+          cdq
+          district {
+            id
+          }
+          quarter {
+            id
+          }
+          state {
+            id
+          }
+        }
+      }
+    }
+  }
+}

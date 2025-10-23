@@ -1,0 +1,24 @@
+query storeLocations($after: String, $before: String, $filter: StoreLocationFilter, $first: Int, $last: Int, $offset: Int, $sort: SortFilter){
+  storeLocations(after: $after, before: $before, filter: $filter, first: $first, last: $last, offset: $offset, sort: $sort){
+    nodes {
+      id
+      title
+      photo
+      phone
+      address
+      map
+      code
+      photo
+      timeSheets
+      preferences
+      locationAddress {
+        id
+        cdq
+        address1
+      }
+    }
+  }
+  shippingMethods {
+    id
+  }
+}

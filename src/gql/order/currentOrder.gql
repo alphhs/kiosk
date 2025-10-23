@@ -1,0 +1,5 @@
+query currentOrder($number: String, $token: String, $currency: String, $flag: String) {
+  currentOrder(number: $number, orderToken: $token, currency: $currency, flag: $flag) {
+    ...currentOrder
+  }
+}

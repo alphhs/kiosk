@@ -1,0 +1,8 @@
+query districts($stateId: Float!) {
+  districts(filter: {stateId: {eq: $stateId}}) {
+    nodes {
+      id
+      name
+    }
+  }
+}

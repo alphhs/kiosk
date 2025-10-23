@@ -1,0 +1,17 @@
+query brands($filter: BrandFilter, $first: Int) {
+  brands (filter: $filter, first: $first, sort: {field: "name", direction: asc}) {
+    nodes {
+      id
+      name
+      code
+      logo
+      cover
+      officialLogo
+      whiteLogo {
+        id
+        url(height: 100, width: 100)
+      }
+    }
+  }
+}
+

@@ -1,0 +1,13 @@
+mutation destroyUserAddress($id: ID!) {
+  destroyUserAddress(input: {id: $id}) {
+    id
+    user {
+      id
+      userAddresses(first: 10) {
+        nodes {
+          ...userAddress
+        }
+      }
+    }
+  }
+}

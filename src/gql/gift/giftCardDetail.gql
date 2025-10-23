@@ -1,0 +1,22 @@
+query giftCardDetail($redemptionCode: String!) {
+  gc(redemptionCode: $redemptionCode) {
+    currency
+    amount
+    giftMessage
+    redeemable
+    purchaserName
+    recipientName
+    recipientEmail
+    sendEmailAt
+    sentAt
+    redeemer {
+      id
+      firstName
+      lastName
+      email
+    }
+    product {
+      image
+    }
+  }
+}

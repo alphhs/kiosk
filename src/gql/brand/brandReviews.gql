@@ -1,0 +1,33 @@
+query brandReviews($code: String, $id: ID, $after: String) {
+  brand(code: $code, id: $id) {
+    id
+    averageRating
+    totalReviews
+    myReview {
+      id
+      comment
+      rating
+      updatedAt
+    }
+    reviews(after: $after, first: 20) {
+      edges {
+        node {
+          id
+          comment
+          rating
+          updatedAt
+          user {
+            avatar
+            id
+            firstName
+            lastName
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}

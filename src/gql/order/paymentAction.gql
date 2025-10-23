@@ -1,0 +1,3 @@
+mutation paymentAction($number: String!, $action: PaymentMethodKind!, $params: JSON) {
+  paymentAction(input: {number: $number, action: $action, params: $params})
+}

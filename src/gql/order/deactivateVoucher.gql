@@ -1,0 +1,5 @@
+mutation deactivateVoucher($adjustmentId: ID!, $number: String!, $token: String!) {
+  deactivateVoucher(input: {adjustmentId: $adjustmentId, number: $number, token: $token}) {
+    ...currentOrder
+  }
+}

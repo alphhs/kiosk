@@ -1,0 +1,5 @@
+mutation createEMailContact($email: String!) {
+  createEMailContact(input: { email: $email, additionalInfo: "hello world" }) {
+    id
+  }
+}

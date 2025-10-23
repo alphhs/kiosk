@@ -1,0 +1,6 @@
+query orderItemCount($number: String, $token: String){
+    order(number: $number, token: $token){
+        id
+        itemCount
+    }
+}

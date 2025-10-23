@@ -1,0 +1,8 @@
+query quarters($districtId: Float!) {
+  quarters(filter: {districtId: {eq: $districtId}}) {
+    nodes {
+      id
+      name
+    }
+  }
+}

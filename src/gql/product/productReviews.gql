@@ -1,0 +1,31 @@
+query productReviews($id: ID!) {
+  listing(id: $id) {
+    reviews(first: 20) {
+      edges {
+        node {
+          id
+          comment
+          rating
+          updatedAt
+          user {
+            id
+            avatar
+            firstName
+            lastName
+            email
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+    myReview {
+      id
+      comment
+      rating
+      updatedAt
+    }
+  }
+}

@@ -1,0 +1,3 @@
+mutation orderPay($input: orderPayInput!) {
+  orderPay(input: $input)
+}

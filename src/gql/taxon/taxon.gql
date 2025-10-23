@@ -1,0 +1,39 @@
+query taxon($permalink: String!) {
+  taxon (permalink: $permalink) {
+    id
+    name
+    permalink
+    position
+    hasChildren
+    bannerLink
+    data
+    listingsCount
+    queryString
+    isDisabled
+    seoTitle
+    metaTitle
+    metaDescription
+    metaKeywords
+    children {
+      id
+      name
+      permalink
+      position
+      icon
+      hasChildren
+      queryString
+      isDisabled
+      bannerLink
+      data
+      children {
+        id
+        name
+        permalink
+        position
+        isDisabled
+        queryString
+        icon
+      }
+    }
+  }
+}

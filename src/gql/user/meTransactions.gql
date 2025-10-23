@@ -1,0 +1,51 @@
+query meTransactions($after: String, $filter: StoreCreditEventFilter) {
+  me {
+    id
+    storeCreditEvents(
+      after: $after
+      first: 20
+      filter: $filter
+      sort: { field: "id", direction: desc }
+    ) {
+      totalCount
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        node {
+          userTotalAmount
+          storeCredit {
+            amount
+            amountUsed
+            createdAt
+            id
+            memo
+            originText
+            originatorId
+            # originator
+            originatorType
+            updatedAt
+          }
+          action
+          amount
+          createdAt
+          id
+          order {
+            id
+            number
+            lineItems {
+              id
+              price
+              name
+              quantity
+              variant {
+                sku
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

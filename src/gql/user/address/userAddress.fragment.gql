@@ -1,0 +1,6 @@
+fragment userAddress on UserAddress {
+  id
+  address {
+    ...address
+  }
+}

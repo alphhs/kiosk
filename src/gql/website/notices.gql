@@ -1,0 +1,23 @@
+query notices($after: String,
+  $before: String,
+  $filter: NoticeFilter,
+  $first: Int,
+  $last: Int,
+  $offset: Int,
+  $sort: SortFilter) {
+  notices(after: $after, before: $before, filter: $filter, first: $first, last: $last, offset: $offset, sort: $sort) {
+    nodes {
+      body
+      createdAt
+      expireAt
+      id
+      link
+      linkName
+      path
+      position
+      startAt
+      title
+      updatedAt
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation updateCheckoutOrder($input: updateCheckoutOrderInput!) {
+  updateCheckoutOrder(input: $input) {
+    ...currentOrder
+  }
+}

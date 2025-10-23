@@ -1,0 +1,18 @@
+query news($id: ID!) {
+  news(id: $id) {
+    id
+    title
+    tagList
+    body
+    createdAt
+    updatedAt
+    thumbnail
+    cover
+    data
+    author {
+      id
+      firstName
+      lastName
+    }
+  }
+}

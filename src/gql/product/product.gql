@@ -1,0 +1,217 @@
+query product($slug: String!, $currency: String) {
+  listing(slug: $slug, impression: true) {
+    id
+    slug
+    createdAt
+    shippingCategoryId
+    fulfillDuration
+    seoTitle
+    seoDescription
+    seoKeywords
+    maxQty
+    minQty
+    totalReviews
+    averageRating
+    reviews(first: 20) {
+      edges {
+        node {
+          id
+          comment
+          rating
+          updatedAt
+          user {
+            id
+            avatar
+            firstName
+            lastName
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+    badges {
+      id
+      name
+      active
+      priority
+      attachment
+      description
+      url
+      style
+      startAt
+      expireAt
+      promotable
+    }
+    relatedProducts {
+      id
+      discountAmount
+      startAt
+      expireAt
+      relationType {
+        id
+        name
+      }
+      relatedTo {
+        ... on Product {
+          id
+          slug
+          sku
+        }
+      }
+    }
+    taxons {
+      id
+      name
+      permalink
+      isAdult
+      data
+    }
+    promotions {
+      id
+      name
+      code
+      description
+      expiresAt
+      rule
+      terms
+      usageLimit
+      actionManifests {
+        id
+        rule
+        action
+        limit
+        variants {
+          id
+          sku
+        }
+      }
+    }
+    product {
+      id
+      name
+      currency
+      availableOn
+      availableUntil
+      data
+      info
+      title
+      description
+      sku
+      slug
+      productCat
+      price(currency: $currency)
+      saleExpireAt
+      sellingPrice(currency: $currency)
+      createdAt
+      updatedAt
+      image
+      promotionable
+       assembliesParts {
+         id
+         quantity
+         part {
+           id
+           name
+           sku
+           image
+           price
+           sellingPrice
+           saleEndDate
+           slug
+           product {
+             brand {
+               name
+             }
+           }
+         }
+       }
+      brand {
+        id
+        name
+        code
+        averageRating
+        officialLogo
+        whiteLogo {
+          id
+          link
+          attachmentFileName
+        }
+        blackLogo {
+          id
+          link
+        }
+      }
+      keyword {
+        gpc
+        name
+      }
+      images {
+        id
+        url
+      }
+      optionTypes {
+        id
+        name
+        presentation
+      }
+      productProperties {
+        id
+        position
+        value
+        property {
+          id
+          name
+          presentation
+          createdAt
+        }
+      }
+      variantsIncludingMaster {
+        id
+        sku
+        isMaster
+        backorderable
+        price(currency: $currency)
+        sellingPrice(currency: $currency)
+        canSupply
+        optionsText
+        totalOnHand
+        saleStartDate
+        saleEndDate
+        barcode
+        image(size: mini)
+        images {
+          id
+          url
+        }
+        optionValues {
+          id
+          name
+          presentation
+          optionType {
+            id
+            name
+          }
+        }
+      }
+      productOptionValues {
+        id
+        images {
+          url(size: large)
+        }
+        optionValue {
+          id
+          name
+        }
+      }
+      sizingGuide {
+        id
+        title
+        csv
+        data
+      }
+    }
+  }
+}

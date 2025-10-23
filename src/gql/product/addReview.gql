@@ -1,0 +1,21 @@
+mutation addReview($input: createReviewInput!){
+  createReview(input: $input){
+    id
+    user {
+      id
+      firstName
+      lastName
+      avatar
+      login
+    }
+    comment
+    rating
+    reviewable {
+      ... on Product{
+        id
+        totalReviews
+        averageRating
+      }
+    }
+  }
+}

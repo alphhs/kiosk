@@ -1,0 +1,26 @@
+query article($slug: String!) {
+  article(slug: $slug, impression: true) {
+    id
+    blocks
+    createdAt
+    impressionsCount
+    preview
+    image {
+      id
+      attachment
+    }
+    items
+    publishedAt
+    seoDescription
+    seoKeywords
+    seoTitle
+    slug
+    tagList
+    title
+    updatedAt
+    author {
+      id
+      fullName
+    }
+  }
+}

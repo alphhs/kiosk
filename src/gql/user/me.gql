@@ -1,0 +1,8 @@
+query me {
+  me {
+    ...user
+    # including high complexity joins for now
+    orderCount
+    wallet
+  }
+}

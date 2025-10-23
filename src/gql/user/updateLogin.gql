@@ -1,0 +1,5 @@
+mutation updateLogin($input: updateLoginInput!) {
+  updateLogin(input: $input) {
+    ...user
+  }
+}

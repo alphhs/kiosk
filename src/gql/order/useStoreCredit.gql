@@ -1,0 +1,7 @@
+mutation useStoreCredit($amount: Float!){
+  useStoreCredit(input: {amount: $amount}){
+    id
+    totalAfterStoreCredit
+    totalAppliedStoreCredit
+  }
+}

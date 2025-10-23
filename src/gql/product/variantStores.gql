@@ -1,0 +1,42 @@
+query variantStores($variantId: ID!) {
+  variant(id: $variantId) {
+    id
+    stockItems {
+      id
+      countOnHand
+      stockLocation {
+        vendor {
+          id
+        }
+        active
+        address1
+        address2
+        adminName
+        backorderableDefault
+        city
+        countryId
+        createdAt
+        default
+        id
+        name
+        phone
+        propagateAllVariants
+        stateId
+        stateName
+        storeLocation {
+          photo
+          address
+          brandNames
+          timeSheets
+          title
+          businessType {
+            name
+          }
+        }
+        timeSheets
+        updatedAt
+        zipcode
+      }
+    }
+  }
+}

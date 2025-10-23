@@ -7,8 +7,7 @@ import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { getMainDefinition, relayStylePagination } from '@apollo/client/utilities';
 import { AssertionFLow, CredentialsFlow, JSOAuth2, OAuth2Token, OwnerFlow } from '@cody-mn/utils/oauth2';
 import { i18n } from '@lingui/core';
-// @ts-expect-error - no types available for UploadHttpLink
-import UploadHttpLink from 'apollo-upload-client/UploadHttpLink.mjs';
+import createUploadLink from 'apollo-upload-client/createUploadLink.mjs';
 import { createClient } from 'graphql-ws';
 import Cookie from 'js-cookie';
 import { toast } from 'react-toastify';
@@ -33,7 +32,7 @@ let oauth: JSOAuth2;
 
 export class CodyClient {
   options: Required<ConfigOptions>;
-  apolloClient: ApolloClient | undefined;
+  apolloClient: ApolloClient<object> | undefined;
 
   constructor({
     host = 'https://api3.cody.mn',
@@ -168,10 +167,8 @@ export class CodyClient {
 
   generateLinks = () => {
     const errorLink = onError((errorResponse) => {
-      // @ts-expect-error - Apollo error response properties
       const { graphQLErrors, networkError } = errorResponse;
       if (graphQLErrors) {
-        // @ts-expect-error - GraphQL error message
         graphQLErrors.forEach(({ message }) => toast.error(message));
       }
       if (networkError) {
@@ -194,7 +191,7 @@ export class CodyClient {
 
     const httpLink = ApolloLink.split(
       (operation) => operation.getContext().upload,
-      new UploadHttpLink({ uri: `${this.options.host}/graphql` }) as unknown as ApolloLink,
+      createUploadLink({ uri: `${this.options.host}/graphql` }) as unknown as ApolloLink,
       this.mainLink(),
     );
 

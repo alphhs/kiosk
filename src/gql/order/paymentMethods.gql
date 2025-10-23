@@ -1,0 +1,11 @@
+query paymentMethods {
+  paymentMethods(active: true) {
+    id
+    active
+    name
+    position
+    methodType
+    description
+    data
+  }
+}

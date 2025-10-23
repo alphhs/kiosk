@@ -1,0 +1,7 @@
+mutation toggleFollow($targetId: ID!, $targetType: String!) {
+  toggleFollow(input: { targetId: $targetId, targetType: $targetType }) {
+    id
+    followersCount
+    following
+  }
+}

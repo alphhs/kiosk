@@ -1,0 +1,16 @@
+mutation CancelOrder($id: ID!, $params: JSON) {
+  performOrderAction(input: {id: $id, action: cancel, params: $params }) {
+    id
+    state
+    canceledAt
+    canceler {
+      id
+    }
+    cancelNote
+    cancelReason {
+      id
+      title
+      description
+    }
+  }
+}

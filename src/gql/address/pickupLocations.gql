@@ -1,0 +1,15 @@
+query pickupLocations($stateId: ID!) {
+  emuPickupLocations(stateId: $stateId) {
+    id
+    code
+    name
+    address
+    acceptcard
+    acceptcash
+    phone
+    worktime
+    maxweight
+    latitude
+    longitude
+  }
+}

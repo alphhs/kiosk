@@ -1,0 +1,3 @@
+mutation authCheckLogin($login: String!, $no_token: Boolean) {
+  exists: authCheckLogin(input: { login: $login, noToken: $no_token, otp: true})
+}

@@ -1,0 +1,23 @@
+query productTrackingInfo($slug: String!, $currency: String) {
+    listing(slug: $slug, impression: false) {
+        taxons {
+            name
+        }
+        product {
+            id
+            name
+            sku
+            price(currency: $currency)
+            sellingPrice(currency: $currency)
+            brand {
+                name
+            }
+            variantsIncludingMaster {
+                id
+                optionsText
+                price
+                sellingPrice
+            }
+        }
+    }
+}

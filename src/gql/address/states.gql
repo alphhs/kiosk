@@ -1,0 +1,8 @@
+query states($countryId: Float!) {
+  states(filter: {countryId: {eq: $countryId}}, sort: {field: "id", direction: asc}) {
+    nodes {
+      id
+      name
+    }
+  }
+}

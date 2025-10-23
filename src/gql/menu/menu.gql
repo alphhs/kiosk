@@ -1,0 +1,7 @@
+query menu($title: String!) {
+  menu(title: $title) {
+    id
+    data
+    title
+  }
+}

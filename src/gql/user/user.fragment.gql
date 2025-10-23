@@ -1,0 +1,19 @@
+fragment user on User{
+  id
+  avatar
+  firstName
+  lastName
+  createdAt
+  login
+  mobile
+  unconfirmedMobile
+  unconfirmedEmail
+  email
+  gender
+  birthday
+  mobileConfirmedAt
+  confirmedAt
+  registerNum
+  confirmationSentAt
+  mobileConfirmationSentAt
+}

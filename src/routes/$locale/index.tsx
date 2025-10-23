@@ -1,5 +1,6 @@
-import { Trans } from '@lingui/react/macro'
-import { createFileRoute } from '@tanstack/react-router'
+import { usePageQuery } from '@/gql/page/page.generated';
+import { Trans } from '@lingui/react/macro';
+import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/$locale/')({
   component: HomePage,
@@ -7,6 +8,8 @@ export const Route = createFileRoute('/$locale/')({
 
 function HomePage() {
   const { locale } = Route.useParams()
+  const { data } = usePageQuery({ variables: { slug: `/${locale}/` } });
+  console.log(data);
 
   return (
     <div className="container mx-auto px-4 py-8">

@@ -1,0 +1,19 @@
+query Newses($first: Int, $filter: NewsFilter, $sort: SortFilter) {
+  newses(first: $first, filter: $filter, sort: $sort) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        title
+        createdAt
+        updatedAt
+        tagList
+        data
+        thumbnail
+      }
+    }
+  }
+}

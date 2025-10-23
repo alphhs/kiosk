@@ -1,0 +1,27 @@
+query taxonNodes($filter: TaxonFilter, $first: Int) {
+  taxons (filter: $filter, first: $first, sort: {field: "position", direction: asc}) {
+    nodes {
+      id
+      name
+      permalink
+      position
+      hasChildren
+      data
+      listingsCount
+      parentId
+      queryString
+      isDisabled
+      children {
+        id
+        name
+        permalink
+        position
+        data
+        isDisabled
+        listingsCount
+        hasChildren
+        queryString
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+query compareListing($slugs: [String!]!, $currency: String) {
+  listings(filter: { slug: { in: $slugs } }, first: 4) {
+    nodes {
+      id
+      slug
+      product {
+        id
+        name
+        currency
+        createdAt
+        averageRating
+        totalReviews
+        info
+        title
+        sku
+        slug
+        productCat
+        price
+        saleExpireAt
+        sellingPrice
+        brand {
+          id
+          name
+          code
+          averageRating
+          officialLogo
+        }
+        image
+        images {
+          id
+          url
+        }
+        productProperties {
+          id
+          position
+          value
+          property {
+            id
+            name
+            presentation
+            createdAt
+          }
+        }
+        variantsIncludingMaster {
+          id
+          sku
+          isMaster
+          backorderable
+          price(currency: $currency)
+          sellingPrice(currency: $currency)
+          canSupply
+          optionsText
+          totalOnHand
+          saleStartDate
+          saleEndDate
+          barcode
+          image(size: mini)
+        }
+      }
+    }
+  }
+}

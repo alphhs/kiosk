@@ -1,0 +1,5 @@
+mutation voucher($number: String!, $token: String!, $code: String!) {
+  useVoucher(input: {number: $number, token: $token, code: $code}){
+    ...currentOrder
+  }
+}

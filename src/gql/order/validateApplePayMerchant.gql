@@ -1,0 +1,13 @@
+mutation validateApplePayMerchant(
+  $merchantId: String!
+  $validationUrl: String!
+  $domain: String
+) {
+  validateApplePayMerchant(
+    input: {
+      merchantId: $merchantId
+      validationUrl: $validationUrl
+      domain: $domain
+    }
+  )
+}

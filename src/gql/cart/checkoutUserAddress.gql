@@ -1,0 +1,14 @@
+query checkoutUserAddress {
+  me {
+    id
+    firstName
+    lastName
+    mobile
+    userAddresses(first: 10) {
+      nodes {
+        ...userAddress
+      }
+      totalCount
+    }
+  }
+}

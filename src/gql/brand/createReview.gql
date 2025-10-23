@@ -1,0 +1,16 @@
+mutation createReview($reviewableId: ID!, $comment: String, $rating: Float!, $reviewableType: String!) {
+  createReview(input: { comment: $comment, rating: $rating, reviewableId: $reviewableId, reviewableType: $reviewableType }) {
+    comment
+    rating
+    id
+    updatedAt
+    createdAt
+    user {
+      avatar
+      firstName
+      lastName
+      login
+      id
+    }
+  }
+}

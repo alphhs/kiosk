@@ -1,0 +1,40 @@
+query myOrders($first: Int, $cursor: String, $sort: SortFilter, $status: OrderStatus, $filter: OrderFilter) {
+  orders(first: $first, after: $cursor, sort: $sort, status: $status, filter: $filter) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        number
+        state
+        paymentState
+        shipmentState
+        shippingMethod {
+          id
+        }
+        shipments {
+          id
+          state
+        }
+        outstandingBalance
+        completedAt
+        waitUntil
+        paidAt
+        shippedAt
+        total
+        currency
+        preorderDownPayment
+        lineItems {
+          id
+          manifest {
+            id
+            name
+            image
+          }
+        }
+      }
+    }
+  }
+}

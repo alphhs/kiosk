@@ -1,0 +1,5 @@
+mutation linkDevice($playerId: String!, $subscribed: Boolean!) {
+  linkDevice(input: { playerId: $playerId, subscribed: $subscribed }) {
+    id
+  }
+}

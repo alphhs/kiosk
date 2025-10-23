@@ -1,0 +1,5 @@
+mutation authRegister($login: String!, $token: String, $password: String!, $firstName: String, $lastName: String) {
+  valid: authRegister(
+    input: { login: $login, token: $token, password: $password, firstName: $firstName, lastName: $lastName }
+  )
+}

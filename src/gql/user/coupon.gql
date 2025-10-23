@@ -1,0 +1,39 @@
+query coupon($id: ID!) {
+  coupon(id: $id) {
+    id
+    number
+    amount
+    data
+    sentAt
+    usedAt
+    state
+    status
+    order {
+      id
+      number
+    }
+    product {
+      id
+      name
+      title
+      images{
+        id
+        url(size: product)
+      }
+      image
+      data
+      features
+      info
+      expiresAt: property(name: "coupon_use_end")
+      startAt: property(name: "coupon_use_start")
+      attributes
+      vendor {
+        name
+        phone
+        email
+      }
+    }
+    inventoryUnitId
+    receiverEmail
+  }
+}

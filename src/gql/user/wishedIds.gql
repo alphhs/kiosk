@@ -1,0 +1,8 @@
+query wishedIds {
+    wishlists {
+        nodes {
+            id
+            wishedVariantIds
+        }
+    }
+}

@@ -1,0 +1,26 @@
+fragment address on Address {
+  id
+  alias
+  firstname
+  lastname
+  phone
+  alternativePhone
+  address1
+  address2
+  coordinate
+  company
+  isCompany
+  cdq
+  state {
+    id
+    name
+  }
+  district {
+    id
+    name
+  }
+  quarter {
+    id
+    name
+  }
+}

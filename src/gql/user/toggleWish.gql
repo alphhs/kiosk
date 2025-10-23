@@ -1,0 +1,6 @@
+mutation toggleWish($variantId: ID!) {
+  toggleWish(input: { variantId: $variantId }) {
+    id
+    wishedVariantIds
+  }
+}

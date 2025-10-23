@@ -1,0 +1,41 @@
+query coupons($filter: CouponFilter, $first: Int, $cursor: String, $sort: SortFilter) {
+  me {
+    id
+    coupons(filter: $filter, first: $first, after: $cursor, sort: $sort) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        node {
+          id
+          number
+          amount
+          data
+          sentAt
+          usedAt
+          state
+          status
+          variant {
+            id
+            name
+            image(size: large)
+            sellingPrice
+            price
+          }
+          product {
+            id
+            name
+            title
+            image
+            expiresAt: property(name: "coupon_datestring")
+            startAt: property(name: "coupon_use_start")
+            where: property(name: "coupon_where")
+          }
+          inventoryUnitId
+          receiverEmail
+        }
+      }
+    }
+  }
+}
