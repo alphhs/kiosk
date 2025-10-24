@@ -1,12 +1,15 @@
-import { lazy } from 'react';
 
+import React from 'react';
 import type { WidgetsType } from '../widgets-type';
 import { AreaWrapper } from './area-wrapper';
 import { CollapseWrapper } from './collapse-wrapper';
 import { RowWrapper } from './row-wrapper';
 import { TabWrapper } from './tab-wrapper';
 
-const SwiperWrapper = lazy(() => import('./swiper-wrapper').then((mod) => ({ default: mod.SwiperWrapper })));
+
+const SwiperWrapper = React.lazy(() =>
+  import('./swiper-wrapper').then((mod) => ({ default: mod.SwiperWrapper }))
+);
 
 export function WrappersFactory({ component, ...props }: WidgetsType) {
   switch (component) {

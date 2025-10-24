@@ -1,7 +1,6 @@
 import { formatMoney } from '@cody-mn/utils';
-import { Image } from '@kiosk/ui';
-import { ReactElement } from 'react';
-import Link from '../Link';
+import { Link } from '@tanstack/react-router';
+import React from 'react';
 
 import { Badge } from './Badge';
 
@@ -65,16 +64,12 @@ export function SingleProduct({ product }: SingleProductProps) {
       <meta itemProp="sku" content={product.sku} />
 
       <figure className="relative">
-        <Link href={`/product/${slug}`} prefetch={true} className="block overflow-hidden">
+        <Link to={`/product/${slug}`} className="block overflow-hidden">
           <div className="aspect-1 relative w-full transform transition-transform duration-200 hover:scale-110">
-            <Image
-              fill
-              sizes="500px"
+            <img
               itemProp="image"
-              unoptimized
               src={image}
               alt={name}
-              blurDataURL={getBlurDataURL(image, name)}
               className="bg-base-200 w-full object-contain"
             />
           </div>
@@ -82,7 +77,7 @@ export function SingleProduct({ product }: SingleProductProps) {
         <Badge product={product} />
         <ExpirationBadge saleExpireAt={saleExpireAt} />
       </figure>
-      <Link itemProp="url" href={`/product/${slug}`} className="text-xs sm:text-sm">
+      <Link itemProp="url" to={`/product/${slug}`} className="text-xs sm:text-sm">
         <div className="mt-2">
           <div>
             <p className="line-clamp-2 font-semibold" itemProp="name">
@@ -118,7 +113,7 @@ export function SingleProduct({ product }: SingleProductProps) {
  * @returns {null|JSX.Element} - Returns null if saleExpireAt is not provided or the sale has expired.
  *                             Returns a JSX.Element representing the expiration badge otherwise.
  */
-function ExpirationBadge({ saleExpireAt }: { saleExpireAt?: string }): null | ReactElement {
+function ExpirationBadge({ saleExpireAt }: { saleExpireAt?: string }): React.ReactElement | null {
   if (!saleExpireAt) return null;
   const [duration, unit] = dateDiff(saleExpireAt);
   if (duration === 0) return null;

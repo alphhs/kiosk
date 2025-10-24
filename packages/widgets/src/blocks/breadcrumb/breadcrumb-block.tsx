@@ -1,5 +1,4 @@
-import Link from '../../components/Link';
-
+import { Link } from '@tanstack/react-router';
 import { Text, TextConfig } from '../../components';
 
 // import {
@@ -16,7 +15,7 @@ import { Text, TextConfig } from '../../components';
 const SingleItem = ({ route, textConfig }: { route: RouteType; textConfig?: TextConfig }) => {
   if (route.path)
     return (
-      <Link href={route.path}>
+      <Link to={route.path}>
         {route.icon && (
           <img
             src={route.icon}

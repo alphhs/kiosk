@@ -1,4 +1,4 @@
-import Link from '../../components/Link';
+import { Link } from '@tanstack/react-router';
 
 import { WidgetsType } from '../../widgets-type';
 
@@ -15,7 +15,7 @@ export function TextBlock({ data, link }: TextBlockProps) {
 
   return (
     <p data-component="text-block" style={style}>
-      {link ? <Link href={link}>{text}</Link> : text}
+      {link ? <Link to={link}>{text}</Link> : text}
     </p>
   );
 }

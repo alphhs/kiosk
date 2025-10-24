@@ -1,6 +1,6 @@
-import { getBlockGridClassnames } from '../../utils/tailwind-config';
 
 import { registry } from '../../registry';
+import { getBlockGridClassnames } from '../article/get-block-grid-classnames';
 import { MediaBlockProps } from './media-block-type';
 import { NewsesQuery } from './newses.generated';
 

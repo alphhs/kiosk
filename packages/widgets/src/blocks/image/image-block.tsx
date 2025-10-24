@@ -1,10 +1,10 @@
 import { getSwiperProps } from '@kiosk/ui/swiper';
-import { lazy } from 'react';
+import React from 'react';
 
 import { ImageBlockProps } from './image-block-type';
-const DisplayBackground = lazy(() => import('./display-background'));
-const DisplayGrid = lazy(() => import('./display-grid'));
-const DisplaySwiper = lazy(() => import('./display-swiper'));
+const DisplayBackground = React.lazy(() => import('./display-background'));
+const DisplayGrid = React.lazy(() => import('./display-grid'));
+const DisplaySwiper = React.lazy(() => import('./display-swiper'));
 
 export function ImageBlock({
   items = [],

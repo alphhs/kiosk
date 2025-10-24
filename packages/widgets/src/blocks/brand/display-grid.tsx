@@ -1,10 +1,10 @@
 import { calculateLink } from '@cody-mn/utils';
 import type { BrandHitObject } from '@cody-mn/utils/es-service';
 import { CSSProperties } from 'react';
-import { getBlockGridClassnames } from '../../utils/tailwind-config';
 
 import { COVER_IMAGE_SIZE, LOGO_IMAGE_SIZE } from '../../components/single-brand';
 import { registry } from '../../registry';
+import { getBlockGridClassnames } from '../article/get-block-grid-classnames';
 import type { BrandBlockProps } from './brand-block-type';
 
 export function DisplayGrid({

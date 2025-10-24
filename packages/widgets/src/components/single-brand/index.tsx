@@ -1,7 +1,7 @@
-import { BrandHitObject } from '@cody-mn/utils/es-service';
-import { Image } from '@kiosk/ui';
+import { Link } from '@tanstack/react-router';
 import { CSSProperties } from 'react';
-import Link from '../Link';
+
+import { BrandHitObject } from '@cody-mn/utils/es-service';
 
 export function SingleBrand({
   code,
@@ -23,27 +23,21 @@ export function SingleBrand({
 }: SingleBrandProps) {
   return (
     <Link
-      href={`/brands/${code}`}
+      to={`/brands/${code}`}
       className="border-base-content/20 bg-base-100 block overflow-hidden rounded-lg border"
       style={customStyle}
     >
       {showCover && (
-        <Image
-          unoptimized
+        <img
           src={cover || `https://via.placeholder.com/${COVER_IMAGE_SIZE}?text=NoCover`}
           className="w-full"
-          width={COVER_IMAGE_SIZE}
-          height={COVER_IMAGE_SIZE}
-          alt={code}
+          style={{ height: COVER_IMAGE_SIZE, width: COVER_IMAGE_SIZE }}
         />
       )}
       <div className="grid grid-cols-[48px_1fr] gap-2 px-2 py-3">
-        <Image
-          unoptimized
+        <img
           className="w-12 object-contain dark:invert"
           src={logo || `https://via.placeholder.com/${LOGO_IMAGE_SIZE}?text=NoLogo`}
-          width={LOGO_IMAGE_SIZE}
-          height={LOGO_IMAGE_SIZE}
           alt={code}
         />
         <div>
@@ -69,11 +63,8 @@ export function SingleBrand({
           {showSamples && listings.length > 0 && (
             <div className="mt-2 flex -space-x-3 overflow-hidden">
               {listings.slice(0, 3).map((list) => (
-                <Image
+                <img
                   key={list.id}
-                  unoptimized
-                  width={32}
-                  height={32}
                   className="bg-base-100 size-8 rounded-full border border-gray-200 object-contain py-1"
                   src={list.image.replace('product', 'mini')}
                   alt={list.slug}

@@ -1,7 +1,5 @@
-'use client';
-
-import { ReactNode, useCallback, useRef } from 'react';
 import cn from 'classnames';
+import { ReactNode, useCallback, useRef } from 'react';
 // import type SwiperInstance from 'swiper';
 import {
   A11y,

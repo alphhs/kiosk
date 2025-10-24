@@ -1,6 +1,6 @@
-import { FC, Suspense } from 'react';
 import { calculateLink } from '@cody-mn/utils';
 import cn from 'classnames';
+import { FC, Suspense } from 'react';
 
 import { CodyImg } from '../blocks/image/image-block-type';
 import { Text, TextConfig } from '../components';

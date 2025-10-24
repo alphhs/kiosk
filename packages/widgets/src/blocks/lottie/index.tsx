@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Lottie } from '@cody-mn/ui/lottie';
+import { Lottie } from '@kiosk/ui/lottie';
+import { useState } from 'react';
 
 import css from './index.module.scss';
 

@@ -1,0 +1,44 @@
+{
+  "name": "@kiosk/eslint-config",
+  "type": "module",
+  "version": "0.1.7",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/kiosk/turbo.git",
+    "directory": "packages/config.eslint"
+  },
+  "exports": {
+    "./base": "./base.js",
+    "./react-internal": "./react-internal.js"
+  },
+  "files": [
+    "library.js",
+    "base.js",
+    "react.js",
+    "react-internal.js"
+  ],
+  "dependencies": {
+    "prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.31.0",
+    "@eslint/js": "^9.17.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-turbo": "^2.3.0",
+    "globals": "^16.3.0",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.15.0"
+  }
+}

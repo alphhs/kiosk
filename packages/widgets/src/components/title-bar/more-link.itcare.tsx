@@ -1,4 +1,4 @@
-import Link from '../Link';
+import { Link } from '@tanstack/react-router';
 
 import { moreType } from './Title-bar';
 
@@ -7,7 +7,7 @@ export const MoreLink = ({ more }: { more: moreType }) => {
 
   return (
     <Link
-      href={more.url || '/'}
+      to={more.url || '/'}
       className="flex flex-nowrap items-center gap-2 text-xs lg:text-sm"
       style={{
         color: more.label.color,

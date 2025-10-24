@@ -1,7 +1,7 @@
 'use client';
 
-import { getSwiperProps } from '@kiosk/ui';
 import { useState } from 'react';
+import { getSwiperProps } from '@kiosk/ui/swiper';
 
 // import { productList } from '@/lib/analytics/view/tracking';
 import { SimpleProduct } from '../../components/single-product';

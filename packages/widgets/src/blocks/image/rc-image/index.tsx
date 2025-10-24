@@ -1,8 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import type { ImagePreviewType } from 'rc-image';
 
-// TODO: Handle CSS import properly for Vite/tsup build
-// import './rc-image.css';
+import './rc-image.css';
 
 export const RCImageIcons = {
   close: <XMarkIcon className="h-5" />,

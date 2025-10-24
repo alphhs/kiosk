@@ -1,5 +1,5 @@
 import { calculateLink, getDateFull } from '@cody-mn/utils';
-import Link from '../Link';
+import { Link } from '@tanstack/react-router';
 
 import { NewsesQuery } from '../../blocks/media/newses.generated';
 
@@ -10,7 +10,7 @@ export default function TemplatePhoto({ news }: { news: NewsType }) {
     <article key={news.id} className="group/singleNews">
       {news.thumbnail && (
         <Link
-          href={`/media/${news.id}`}
+          to={`/media/${news.id}`}
           className="bg-base-100 relative block aspect-[16/9] w-full overflow-hidden rounded sm:aspect-[2/1] lg:aspect-[3/2]"
         >
           <img
@@ -28,7 +28,7 @@ export default function TemplatePhoto({ news }: { news: NewsType }) {
                   {news.tagList.map((tag) => (
                     <Link
                       key={tag}
-                      href={`/media/tag/${tag}`}
+                      to={`/media/tag/${tag}`}
                       className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                     >
                       {tag}
@@ -38,7 +38,7 @@ export default function TemplatePhoto({ news }: { news: NewsType }) {
               )}
             </div>
             <h3 className="group-hover/singleNews:text-accent line-clamp-1 text-sm font-semibold group-hover/singleNews:line-clamp-none lg:text-base">
-              <Link href={`/media/${news.id}`}>{news.title}</Link>
+              <Link to={`/media/${news.id}`}>{news.title}</Link>
             </h3>
           </div>
         </Link>

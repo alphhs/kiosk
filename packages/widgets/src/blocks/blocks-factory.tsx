@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+
 
 import type { WidgetsType } from '../widgets-type';
 import { ArticleBlock } from './article';
@@ -12,11 +12,11 @@ import { ImageBlock } from './image';
 import { MapBlock } from './map';
 import { MediaBlock } from './media';
 import { NotificationBlock } from './notification';
+import { ProductBlock } from './product';
 import { ReelsBlock } from './reels';
 import { TextBlock } from './text';
 import { YoutubeBlock } from './youtube';
 
-const ProductBlock = lazy(() => import('./product').then((comp) => ({ default: comp.ProductBlock })));
 
 export function BlocksFactory(props: WidgetsType) {
   if (props.extraBlocks && props.extraBlocks[props.component]) {
@@ -34,11 +34,7 @@ export function BlocksFactory(props: WidgetsType) {
     case 'YoutubeBlock':
       return <YoutubeBlock {...props} />;
     case 'ProductBlock':
-      return (
-        <Suspense fallback={<div>Loading...</div>}>
-          <ProductBlock {...props} />
-        </Suspense>
-      );
+      return <ProductBlock {...props} />;
     case 'ImageBlock':
       return <ImageBlock {...props} />;
     case 'BreadcrumbBlock':

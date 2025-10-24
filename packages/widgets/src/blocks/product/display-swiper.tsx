@@ -1,4 +1,4 @@
-import { getSwiperProps, SwiperOptions, SwiperWithRenderedItems } from '@kiosk/ui';
+import { getSwiperProps, SwiperOptions, SwiperWithRenderedItems } from '@kiosk/ui/swiper';
 import { SwiperProps } from 'swiper/react';
 
 import { SimpleProduct } from '../../components';

@@ -1,16 +1,16 @@
 'use client';
 
-import { useEffect, useState, lazy, Suspense } from 'react';
-import { getBlockGridClassnames } from '../../utils/tailwind-config';
 import { calculateLink } from '@cody-mn/utils';
 import type { ImagePreviewType } from 'rc-image';
 import type { PreviewProps } from 'rc-image/lib/Preview';
+import { useEffect, useState } from 'react';
 
+import PreviewGroup from 'rc-image/lib/PreviewGroup';
+import { getBlockGridClassnames } from '../article/get-block-grid-classnames';
 import { ImageBlockItemProps, ImageBlockProps } from './image-block-type';
 import { SingleItem } from './single-item';
 
 // Lazy-load rc-image PreviewGroup directly to ensure the whole lib is code-split
-const LazyPreviewGroup = lazy(() => import('rc-image').then((m) => ({ default: m.default.PreviewGroup })));
 
 function DisplayGrid({
   items,
@@ -97,7 +97,7 @@ function DisplayGrid({
       })}
 
       {zoomOnClick && open && icons && toolbarRender ? (
-        <LazyPreviewGroup
+        <PreviewGroup
           icons={icons}
           preview={{
             visible: open,

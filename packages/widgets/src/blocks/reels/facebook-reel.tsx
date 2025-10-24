@@ -1,6 +1,6 @@
 import { formatMoney } from '@cody-mn/utils';
 import { HitObject } from '@cody-mn/utils/es-service';
-import Link from '../../components/Link';
+import { Link } from '@tanstack/react-router';
 
 export function FacebookReel({ id, product }: { id: string; product?: HitObject }) {
   return (
@@ -18,10 +18,10 @@ export function FacebookReel({ id, product }: { id: string; product?: HitObject 
       ></iframe>
       {product && (
         <div className="bg-base-100 flex w-[267px] items-center gap-2 rounded-md p-2">
-          <Link href={`/product/${product.slug}`} className="block size-12 flex-none">
+          <Link to={`/product/${product.slug}`} className="block size-12 flex-none">
             <img src={product.image} alt={product.name} />
           </Link>
-          <Link href={`/product/${product.slug}`} className="block overflow-hidden">
+          <Link to={`/product/${product.slug}`} className="block overflow-hidden">
             <h5 className="truncate text-sm">{product.name}</h5>
             <p className="text-sm whitespace-nowrap">{formatMoney(product.selling_price)}</p>
           </Link>

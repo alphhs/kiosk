@@ -1,4 +1,4 @@
-import { SwiperOptions } from '@kiosk/ui';
+import { SwiperOptions } from '@kiosk/ui/swiper';
 
 import { SortDirection } from '../../graphql';
 import { BlocksType, ColumnWidth, ContentStyle, DisplayType, GridOptions } from '../blocks-type';

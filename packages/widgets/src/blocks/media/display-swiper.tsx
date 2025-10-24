@@ -1,4 +1,4 @@
-import { getSwiperProps, SwiperOptions, SwiperWithRenderedItems } from '@kiosk/ui';
+import { getSwiperProps, SwiperOptions, SwiperWithRenderedItems } from '@kiosk/ui/swiper';
 
 import { registry } from '../../registry';
 import { MediaBlockProps } from './media-block-type';

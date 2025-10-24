@@ -1,7 +1,7 @@
-import { getBlockGridClassnames } from '../../utils/tailwind-config';
 
 import { SimpleProduct } from '../../components/single-product';
 import { registry } from '../../registry';
+import { getBlockGridClassnames } from '../article/get-block-grid-classnames';
 import { ProductBlockProps } from './product-block-type';
 
 export function DisplayGrid({ products = [], gridOptions, leasingPrice, loading }: DisplayGridProps) {

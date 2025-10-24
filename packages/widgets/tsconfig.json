@@ -11,16 +11,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true,
-    "types": ["node"]
+    "moduleDetection": "force",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", ".turbo", "storybook-static"]
+  "include": ["src"]
 }

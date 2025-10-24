@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState, lazy } from 'react';
-import { SwiperWithRenderedItems } from '@kiosk/ui/swiper';
 import { calculateLink } from '@cody-mn/utils';
+import { SwiperWithRenderedItems } from '@kiosk/ui/swiper';
+import { useEffect, useState } from 'react';
+
 import type { ImagePreviewType } from 'rc-image';
 import type { PreviewProps } from 'rc-image/lib/Preview';
 import type { SwiperProps, SwiperSlideProps } from 'swiper/react';
@@ -11,7 +12,10 @@ import type { ImageBlockItemProps, ImageBlockProps } from './image-block-type.d.
 import { SingleItem } from './single-item';
 
 // Lazy-load rc-image PreviewGroup directly to ensure the whole lib is code-split
-const LazyPreviewGroup = lazy(() => import('rc-image').then((m) => ({ default: m.default.PreviewGroup })));
+const LazyPreviewGroup = React.lazy(() => import('rc-image').then((m) => m.default.PreviewGroup), {
+  ssr: false,
+  loading: () => null,
+});
 
 function DisplaySwiper({
   items,

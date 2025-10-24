@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
+
 
 import { MediaBlockProps } from '../../blocks/media/media-block-type';
 import { NewsesQuery } from '../../blocks/media/newses.generated';
@@ -9,11 +10,29 @@ interface TemplateProps {
   news: NewsType;
 }
 
-const Loading = () => <div className="skeleton h-20 w-full" />;
+const loading = () => <div className="skeleton h-20 w-full" />;
 
-const TemplateDefault = lazy(() => import('./template-default'));
-const TemplateList = lazy(() => import('./template-list'));
-const TemplatePhoto = lazy(() => import('./template-photo'));
+const TemplateDefaultLazy = React.lazy<React.ComponentType<TemplateProps>>(() => import('./template-default'));
+const TemplateListLazy = React.lazy<React.ComponentType<TemplateProps>>(() => import('./template-list'));
+const TemplatePhotoLazy = React.lazy<React.ComponentType<TemplateProps>>(() => import('./template-photo'));
+
+const TemplateDefault: React.FC<TemplateProps> = (props) => (
+  <React.Suspense fallback={loading()}>
+    <TemplateDefaultLazy {...props} />
+  </React.Suspense>
+);
+
+const TemplateList: React.FC<TemplateProps> = (props) => (
+  <React.Suspense fallback={loading()}>
+    <TemplateListLazy {...props} />
+  </React.Suspense>
+);
+
+const TemplatePhoto: React.FC<TemplateProps> = (props) => (
+  <React.Suspense fallback={loading()}>
+    <TemplatePhotoLazy {...props} />
+  </React.Suspense>
+);
 
 type Templates = 'card' | 'list' | 'photo';
 
@@ -26,9 +45,5 @@ const templateMap: Record<Templates, React.ComponentType<TemplateProps>> = {
 export const SingleNews = ({ news, template }: { news: NewsType; template: MediaBlockProps['template'] }) => {
   const Comp = templateMap[template || 'card'] || TemplateDefault;
 
-  return (
-    <Suspense fallback={<Loading />}>
-      <Comp news={news} />
-    </Suspense>
-  );
+  return <Comp news={news} />;
 };

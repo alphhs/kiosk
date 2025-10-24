@@ -1,8 +1,7 @@
-'use client';
 
-import { Image as NextImage } from '@kiosk/ui';
 import { useState } from 'react';
 
+import { NextImage } from '@kiosk/ui/image';
 import { registry } from '../../registry';
 import { CodyImg } from '../image/image-block-type';
 import { ComboItemType } from './combo-block';
@@ -44,13 +43,11 @@ export function TypeOnImage({ items = [], image }: { items: ComboItemType[]; ima
     <div>
       <div className="relative">
         <NextImage
-          priority
           id={image.id}
           file_name={image.file_name}
           width={image.width || 80}
           height={image.height || 80}
-          onClick={() => setActiveTooltip(null)}
-          className="skeleton rounded-none"
+          
         />
         {showTooltip &&
           validPoints.map((item, idx) => (

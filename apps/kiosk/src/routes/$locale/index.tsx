@@ -1,4 +1,5 @@
 import { usePageQuery } from '@/gql/page/page.generated';
+import { WidgetsRender } from '@kiosk/widgets';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/$locale/')({
@@ -10,6 +11,6 @@ function HomePage() {
   console.log(data);
 
   return (
-   <div>fewafejka</div>
+    <WidgetsRender items={data?.page?.items || []} />
   )
 }

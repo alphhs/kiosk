@@ -1,5 +1,4 @@
-import { Image } from '@kiosk/ui';
-import Link from '../Link';
+import { Link } from '@tanstack/react-router';
 
 import { ArticleBlockProps } from '../../blocks/article/article-block-type';
 
@@ -7,14 +6,11 @@ export function SingleArticle({ title, slug, image, author, impressionsCount }: 
   if (!image?.attachment || !title) return null;
 
   return (
-    <Link href={`/articles/${slug}`} className="space-y-5">
-      <Image
-        unoptimized
+    <Link to={`/articles/${slug}`} className="space-y-5">
+      <img
         className="aspect-[2/1] w-full rounded-xl object-cover"
         src={image.attachment}
         alt={title}
-        width={0}
-        height={0}
       />
       <div className="space-y-1">
         <p className="text-lg">{title}</p>

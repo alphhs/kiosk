@@ -1,4 +1,4 @@
-import { SwiperOptions } from '@kiosk/ui';
+import { SwiperOptions } from '@kiosk/ui/swiper';
 
 import { ContentStyle, DisplayType, GridOptions, TextProps } from '../blocks-type';
 import { QueryProps } from './fetch-products';

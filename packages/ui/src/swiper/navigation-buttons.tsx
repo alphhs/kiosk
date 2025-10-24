@@ -1,5 +1,3 @@
-'use client';
-
 export const NavigiationButtons = ({ handlePrev, handleNext }: { handlePrev: () => void; handleNext: () => void }) => (
   <>
     <button

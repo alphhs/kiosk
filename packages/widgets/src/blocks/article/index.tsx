@@ -1,4 +1,4 @@
-import { getSwiperProps } from '@kiosk/ui';
+import { getSwiperProps } from '@kiosk/ui/swiper';
 
 import type { SortDirection } from '../../graphql';
 import { registry } from '../../registry';

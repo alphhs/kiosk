@@ -1,6 +1,5 @@
-'use client';
 
-import { Image as NextImage } from '@kiosk/ui';
+import { NextImage } from '@kiosk/ui/image';
 
 // import { registry } from '../../registry';
 import { CodyImg } from '../image/image-block-type';
@@ -14,7 +13,6 @@ export function TypeOnModal({ id, items = [], image }: { id: string; items: Comb
     <>
       <div className="skeleton relative rounded-none">
         <NextImage
-          priority
           id={image.id}
           file_name={image.file_name}
           width={image.width || 80}
@@ -34,7 +32,6 @@ export function TypeOnModal({ id, items = [], image }: { id: string; items: Comb
           <div className="grid gap-6 p-4 lg:grid-cols-2">
             <div className="border-base-content/20 hidden border-r pr-6 lg:block">
               <NextImage
-                priority
                 id={image.id}
                 file_name={image.file_name}
                 width={image.width || 80}

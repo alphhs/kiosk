@@ -1,4 +1,4 @@
-import { SwiperOptions } from '@kiosk/ui';
+import { SwiperOptions } from '@kiosk/ui/swiper';
 
 import { CodyImageProps, ContentStyle, DisplayType, GridOptions, TextProps } from '../blocks-type';
 

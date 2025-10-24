@@ -1,8 +1,6 @@
-'use client';
-
-import { addLeadingZeros, CountDown } from '@kiosk/ui';
-import cn from 'classnames';
 import React, { useCallback, useEffect, useState } from 'react';
+import { addLeadingZeros, CountDown } from '@kiosk/ui/countdown';
+import cn from 'classnames';
 
 import { TextConfig } from '../../components';
 

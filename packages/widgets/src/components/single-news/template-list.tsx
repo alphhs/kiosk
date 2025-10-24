@@ -1,5 +1,5 @@
 import { calculateLink, getDateFull } from '@cody-mn/utils';
-import Link from '../Link';
+import { Link } from '@tanstack/react-router';
 
 import { NewsesQuery } from '../../blocks/media/newses.generated';
 
@@ -9,7 +9,7 @@ export default function TemplateList({ news }: { news: NewsType }) {
   return (
     <article key={news.id} className="group/singleNews grid w-full grid-cols-3 items-center gap-8">
       {news.thumbnail && (
-        <Link href={`/media/${news.id}`} className="col-span-1 mb-4 block w-full overflow-hidden rounded-2xl">
+        <Link to={`/media/${news.id}`} className="col-span-1 mb-4 block w-full overflow-hidden rounded-2xl">
           <img
             alt={news.title}
             src={calculateLink(news.thumbnail.id, news.thumbnail.file_name || news.thumbnail.fileName, 800, 0)}
@@ -27,7 +27,7 @@ export default function TemplateList({ news }: { news: NewsType }) {
               {news.tagList.map((tag) => (
                 <Link
                   key={tag}
-                  href={`/media/tag/${tag}`}
+                  to={`/media/tag/${tag}`}
                   className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                 >
                   {tag}
@@ -38,7 +38,7 @@ export default function TemplateList({ news }: { news: NewsType }) {
         </div>
         <h3 className="text-base font-semibold lg:text-lg">{news.title}</h3>
         <div dangerouslySetInnerHTML={{ __html: news.body || '' }} className="h-24 overflow-hidden" />
-        <Link href={`/media/${news.id}`} className="text-neutral group-hover/singleNews:text-accent mt-10 block">
+        <Link to={`/media/${news.id}`} className="text-neutral group-hover/singleNews:text-accent mt-10 block">
           Дэлгэрэнгүй унших
         </Link>
       </div>

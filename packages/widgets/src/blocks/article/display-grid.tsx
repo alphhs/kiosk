@@ -1,9 +1,8 @@
-import { getBlockGridClassnames } from '../../utils/tailwind-config';
-
 import { registry } from '../../registry';
 import { ColumnWidth } from '../blocks-type';
 import { ArticleBlockProps } from './article-block-type';
 import { ArticlesQuery } from './articles.generated';
+import { getBlockGridClassnames } from './get-block-grid-classnames';
 
 export function DisplayGrid({ gridOptions, articles, template }: DisplayGridProps) {
   const SingleArticle = registry.article!;

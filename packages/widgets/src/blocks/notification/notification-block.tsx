@@ -1,9 +1,7 @@
-'use client';
-
-import { Image as NextImage } from '@kiosk/ui';
+import { NextImage } from '@kiosk/ui/image';
+import { Link } from '@tanstack/react-router';
 import cn from 'classnames';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from '../../components/Link';
 
 interface CustomTextProps {
   text?: string;
@@ -148,7 +146,7 @@ export function NotificationBlock({
             {closeIcon}
           </button>
 
-          <Link href={url || ''} className="bg-base-100 block">
+          <Link to={url || ''} className="bg-base-100 block">
             {(message?.text || description?.text) && (
               <div className="mb-4 space-y-0.5 px-3">
                 {message?.text && <CustomText item={message} />}

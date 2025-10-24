@@ -1,0 +1,20 @@
+{
+  "name": "@kiosk/typescript-config",
+  "version": "0.1.1",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/kiosk/turbo.git",
+    "directory": "packages/config.typescript"
+  },
+  "dependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^22.5.5",
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.5",
+    "@types/eslint": "^9.6.1"
+  }
+}

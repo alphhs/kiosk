@@ -1,4 +1,4 @@
-import { SwiperWithRenderedItems } from '@kiosk/ui';
+import { SwiperWithRenderedItems } from '@kiosk/ui/swiper';
 import type { SwiperProps, SwiperSlideProps } from 'swiper/react';
 
 import { registry } from '../../registry';

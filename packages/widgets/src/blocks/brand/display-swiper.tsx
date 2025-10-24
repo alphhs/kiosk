@@ -1,6 +1,6 @@
 import { calculateLink } from '@cody-mn/utils';
 import type { BrandHitObject } from '@cody-mn/utils/es-service';
-import { getSwiperProps, SwiperWithRenderedItems } from '@kiosk/ui';
+import { getSwiperProps, SwiperWithRenderedItems } from '@kiosk/ui/swiper';
 import { CSSProperties } from 'react';
 
 import { COVER_IMAGE_SIZE, LOGO_IMAGE_SIZE } from '../../components/single-brand';

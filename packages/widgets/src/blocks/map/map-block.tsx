@@ -4,8 +4,7 @@ import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-map
 import cn from 'classnames';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
-// TODO: Handle SCSS module import properly for Vite/tsup build
-// import style from './index.module.scss';
+import style from './index.module.scss';
 import { CustomMarkerProp, MapBlockProps } from './map-block-type';
 
 const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!;
@@ -108,7 +107,7 @@ export const MapBlock: React.FC<MapBlockProps> = ({ markers, center, height = 50
     { label: 'Газрын зургаар', value: 'map' },
   ];
   return (
-    <div data-component="map-block" className={`map-container ${containerClass} `}>
+    <div data-component="map-block" className={`${style.container} ${containerClass} `}>
       <div className={`${locations === 'hidden' ? locations : 'flex'} bg-base-content/5 my-2 gap-2 rounded-lg p-2 lg:hidden`}>
         {tabs.map((item) => (
           <button

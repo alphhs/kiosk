@@ -1,5 +1,5 @@
-import { IsLazy } from '@kiosk/ui';
 import { CSSProperties, ElementType, ReactNode, Suspense } from 'react';
+import { IsLazy } from '@kiosk/ui/lazyload';
 
 import ResponsiveSection from './components/responsive-section';
 // import { IsLazy } from '@/components/helper/is-lazy';

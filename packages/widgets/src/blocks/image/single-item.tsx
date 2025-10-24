@@ -1,30 +1,10 @@
-import { Image as NextImage } from '@kiosk/ui';
+import { NextImage } from '@kiosk/ui/image';
+import { Link } from '@tanstack/react-router';
 import cn from 'classnames';
 import { CSSProperties, ReactNode } from 'react';
-import Link from '../../components/Link';
 
 import type { CodyImg, ImageBlockItemProps, ImageBlockProps } from './image-block-type.d.ts';
-// TODO: Handle SCSS module import properly for Vite/tsup build
-// import styles from './styles.module.scss';
-
-// Temporary styles object to replace SCSS module
-const styles = {
-  item: 'image-item',
-  hoverShadow: 'hover-shadow',
-  hoverImg: 'hover-img',
-  zoomIn: 'zoom-in',
-  zoomOut: 'zoom-out',
-  toColor: 'to-color',
-  toGray: 'to-gray',
-  imageFrame: 'image-frame',
-  imageTag: 'image-tag',
-  normal: 'normal',
-  imgHover: 'img-hover',
-  flipper: 'flipper',
-  inner: 'inner',
-  front: 'front',
-  back: 'back'
-};
+import styles from './styles.module.scss';
 
 export function SingleItem({
   item,
@@ -80,8 +60,7 @@ export function SingleItem({
             ) : (
               <>
                 <NextImage
-                  {...item.img}
-                  priority
+                  {...item.img}priority
                   width={item.img.width || 80}
                   height={item.img.height || 80}
                   className={cn(styles.imageTag, { [styles.normal ?? '']: item.imgHover })}
@@ -97,14 +76,7 @@ export function SingleItem({
                     {...item.imgHover}
                     width={item.img.width || 80}
                     height={item.img.height || 80}
-                    className={cn(styles.imageTag, styles.imgHover)}
-                    style={{
-                      transition:
-                        hoverEffect && hoverDuration && ['fade', 'zoom_in', 'zoom_out'].includes(hoverEffect)
-                          ? `all ${hoverDuration}ms ease-in-out`
-                          : 'unset',
-                      padding: paddingImg || 0,
-                    }}
+                    
                   />
                 )}
               </>
@@ -125,7 +97,7 @@ export function SingleItem({
 
 const LinkOrDiv = ({ href, children }: { href?: string; children: ReactNode }) =>
   href && href.length > 0 ? (
-    <Link className="grid place-items-center" href={href}>
+    <Link className="grid place-items-center" to={href}>
       {children}
     </Link>
   ) : (
