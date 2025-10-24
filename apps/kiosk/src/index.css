@@ -14,7 +14,195 @@
     padding-inline: 1rem;
   }
 }
+/* Read classes from internal packages */
+@source "../../../packages/widgets/src";
+@source "../../../packages/ui/src";
 
+/* Tailwind Theme Variables */
+@theme {
+  --breakpoint-xl: 82.5rem; /* 1320px */
+
+  --animate-snowflake: snowflake 25s linear infinite;
+  --animate-callbtn-ping: ping 2s ease-in-out infinite;
+  --animate-callbtn-scale: callbtn 2s ease-in-out infinite;
+  --animate-shiny: shiny 2s infinite;
+
+  @keyframes snowflake {
+    0% {
+      background-position:
+        0 0,
+        0 0,
+        0 0;
+    }
+
+    50% {
+      background-position:
+        500px 500px,
+        100px 200px,
+        -100px 150px;
+    }
+
+    100% {
+      background-position:
+        500px 1000px,
+        200px 400px,
+        -100px 300px;
+    }
+  }
+
+  @keyframes callbtn {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.09);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shiny {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%) skewX(25deg);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateX(100%) skewX(25deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(100%) skewX(25deg);
+    }
+  }
+}
+/* Tailwind Container Configuration */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@utility label {
+  color: var(--color-base-content);
+  justify-content: space-between;
+  padding: 0.5rem 0.25rem;
+  --fontsize: var(--text-sm);
+  .label-text {
+    font-size: var(--fontsize);
+  }
+  display: flex;
+}
+@utility collapse {
+  & > input:is([type="checkbox"], [type="radio"]) {
+    min-height: 0;
+    padding: 0;
+  }
+}
+@utility join {
+  border-radius: var(--radius-field);
+}
+@utility input {
+  &:focus,
+  &:focus-within {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+}
+@utility badge {
+  padding-inline: calc(0.25rem * 2 - var(--border));
+}
+@utility child-img-inline {
+  img {
+    display: inline-block;
+  }
+}
+
+@utility badge {
+  --radius-selector: 1.9rem;
+}
+
+/* Widgets Templates */
+:root {
+  --grid-products-sm: repeat(auto-fill, minmax(150px, 1fr));
+  --grid-products-md: repeat(auto-fill, minmax(180px, 1fr));
+  --grid-products-lg: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+/* Maintain backwards compatibility grid col classes */
+@utility grid-cols-products_sm {
+  grid-template-columns: var(--grid-products-sm);
+}
+
+@utility grid-cols-products_md {
+  grid-template-columns: var(--grid-products-md);
+}
+
+@utility grid-cols-products_lg {
+  grid-template-columns: var(--grid-products-lg);
+}
+/* @utility checkbox {
+  padding: 0;
+} */
+/* Hide scrollbar */
+@utility no-scrollbar {
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* more thin scrollbar on some panels */
+@utility thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #babac0 #fff;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    background-color: #fff;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  &::--webkit-scrollbar-thumb {
+    border-radius: 16px;
+    border: 4px solid #fff;
+    background-color: #babac0;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+@utility container-fluid {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @variant lg {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@utility btn-lg {
+  --fontsize: var(--text-sm);
+}
+@utility btn-sm {
+  --fontsize: var(--text-sm);
+}
+@utility badge {
+  --size: calc(var(--size-selector, 0.25rem) * 5);
+}
 /* DaisyUI Component Overrides */
 @layer components {
   .label {

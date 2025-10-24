@@ -289,6 +289,12 @@ importers:
       '@kiosk/typescript-config':
         specifier: workspace:*
         version: link:../config.typescript
+      '@types/react':
+        specifier: ^19.1.16
+        version: 19.2.2
+      '@types/react-dom':
+        specifier: ^19.1.9
+        version: 19.2.2(@types/react@19.2.2)
 
   packages/widgets:
     dependencies:

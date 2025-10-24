@@ -60,7 +60,7 @@ export function SingleItem({
             ) : (
               <>
                 <NextImage
-                  {...item.img}priority
+                  {...item.img}
                   width={item.img.width || 80}
                   height={item.img.height || 80}
                   className={cn(styles.imageTag, { [styles.normal ?? '']: item.imgHover })}

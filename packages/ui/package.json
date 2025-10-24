@@ -2,14 +2,6 @@
     "name": "@kiosk/ui",
     "version": "0.2.1",
     "license": "UNLICENSED",
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "ssh://git@github.com/kiosk/cody-mn/turbo.git",
-        "directory": "packages/ui"
-    },
     "exports": {
         "./countdown": "./src/countdown.tsx",
         "./swiper": "./src/swiper/index.ts",
@@ -33,6 +25,8 @@
     },
     "devDependencies": {
         "@kiosk/eslint-config": "workspace:*",
-        "@kiosk/typescript-config": "workspace:*"
+        "@kiosk/typescript-config": "workspace:*",
+        "@types/react": "^19.1.16",
+        "@types/react-dom": "^19.1.9"
     }
 }
