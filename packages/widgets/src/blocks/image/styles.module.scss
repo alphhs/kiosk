@@ -1,0 +1,119 @@
+.item {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  .imageFrame {
+    display: block;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    .imageTag {
+      width: 100%;
+      transition: inherit;
+      &.imgHover {
+        opacity: 0;
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+
+  &.hoverImg:hover {
+    .normal {
+      opacity: 0;
+    }
+    .imgHover {
+      opacity: 1;
+    }
+  }
+
+  &.hoverShadow:hover {
+    box-shadow: rgb(0 0 0 / 24%) 0 0 6px 0;
+  }
+
+  &.zoomOut {
+    .imageFrame picture,
+    .imageFrame img {
+      transform: scale(1.05);
+    }
+
+    &:hover {
+      .imageFrame picture,
+      .imageFrame img {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &.toColor {
+    .imageFrame {
+      filter: grayscale(100%);
+    }
+
+    &:hover {
+      .imageFrame {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  &.toGray {
+    .imageFrame {
+      filter: grayscale(0);
+    }
+
+    &:hover {
+      .imageFrame {
+        filter: grayscale(100%);
+      }
+    }
+  }
+
+  &.zoomIn {
+    .imageFrame img {
+      transform: scale(1);
+    }
+  }
+
+  &.zoomIn:hover {
+    .imageFrame img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.flipper {
+  width: 100%;
+  margin: auto;
+  perspective: 1000px;
+  .inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform .8s;
+    transform-style: preserve-3d;
+    position: relative;
+    .front {
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      position: absolute;
+    }
+    .back {
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
+      position: relative;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &:hover {
+    .inner {
+      transform: rotateY(180deg);
+    }
+  }
+}

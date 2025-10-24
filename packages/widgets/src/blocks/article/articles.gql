@@ -1,0 +1,33 @@
+query articles($first: Int, $filter: ArticleFilter, $sort: SortFilter) {
+  articles(first: $first, filter: $filter, sort: $sort) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        impressionsCount
+        id
+        title
+        createdAt
+        updatedAt
+        author {
+          username
+          fullName
+          followersCount
+        }
+        averageRating
+        image {
+          id
+          attachment
+          attachmentFileName
+        }
+        preview
+        slug
+        totalComments
+        totalReviews
+        tagList
+      }
+    }
+  }
+}

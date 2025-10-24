@@ -1,0 +1,19 @@
+.container {
+    :global(.gm-style .gm-style-iw-c) {
+        padding: 0;
+        background-color: white;
+    }
+    :global(.site-primeat .gm-style .gm-style-iw-c) {
+        background-color: black;
+    }
+    :global(.gm-style-iw-chr){
+        display: none;
+    }
+    :global(.gm-style-iw-d){
+        &::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,82 @@
+.playlist{
+  display: block;
+  .single-player {
+    width: 100%;
+    padding: 8px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    &:nth-child(odd) {
+      background-color: #f4f6f9;
+    }
+    .number {
+      flex: 0 0 40px;
+      color: #a5abb3;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    .names {
+      flex: 1 1 100%;
+      .name {
+        color: #242424;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+      .subtitle {
+        margin: 0;
+        color: #666;
+        font-size: 13px;
+        font-weight: normal;
+      }
+    }
+    .ant-progress {
+      width: 100px;
+      flex: 0 0 160px;
+      content: '';
+      display: block;
+      .ant-progress-inner {
+        background-color: #e4dfdf;
+        .ant-progress-bg {
+          background-color: #ff6166;
+        }
+      }
+    }
+    .player {
+      margin: 0;
+    }
+    .icon-play {
+      height: 40px;
+      flex: 0 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      :focus {
+        outline: none;
+      }
+      .anticon {
+        font-size: 16px;
+      }
+    }
+  }
+  @media all and (max-width: 991px) {
+    .single-player {
+      width: 100%;
+      .shoppy-progress {
+        width: 100%;
+        flex: none;
+      }
+      .name {
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}
